@@ -30,7 +30,7 @@ class AlertWindow: UIWindow, HoldingDelegate {
         holdingViewController.delegate = self
         rootViewController = holdingViewController
         
-        windowLevel = .normal
+        windowLevel = .alert
     }
     
     @available(*, unavailable)
@@ -54,7 +54,7 @@ class AlertWindow: UIWindow, HoldingDelegate {
     func dismiss() {
         holdingViewController.dismissAlert()
     }
-
+    
     // MARK: - Resign
     
     private func resignKeyAndHide() {
@@ -94,7 +94,7 @@ fileprivate class HoldingViewController: UIViewController, UIViewControllerTrans
         
         present(containerViewController, animated: true, completion: nil)
     }
-
+    
     // MARK: - Dismiss
     
     func dismissAlert() {
@@ -152,12 +152,12 @@ fileprivate class AlertContainerViewController: UIViewController, UIViewControll
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
+        ])
     }
 }
 
 fileprivate class CustomAlertPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
-
+    
     // MARK: - UIViewControllerAnimatedTransitioning
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

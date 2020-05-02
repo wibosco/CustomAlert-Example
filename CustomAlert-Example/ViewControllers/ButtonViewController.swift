@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os
 
 class ButtonViewController: UIViewController {
     @IBOutlet weak var showAlertsButton: UIButton!
@@ -41,7 +42,7 @@ class ButtonViewController: UIViewController {
     
     private func createTextAlertViewModel() -> TextAlertViewModel  {
         let dismissButton = TextAlertButton(title: "Dismiss") {
-            print("Dismiss button was pressed")
+            os_log(.info, "Dismiss button was pressed")
         }
         let alertViewModel = TextAlertViewModel(title: "Text alert title", button: dismissButton)
         
@@ -51,7 +52,7 @@ class ButtonViewController: UIViewController {
     private func createIconAlertViewModel() -> IconAlertViewModel  {
         let icon = UIImage(imageLiteralResourceName: "error-circle")
         let okButton = IconAlertButton(title: "OK") {
-            print("OK button was pressed")
+            os_log(.info, "OK button was pressed")
         }
         let alertViewModel = IconAlertViewModel(title: "Icon alert title", message: "Message for icon alert", icon: icon, button: okButton)
         
