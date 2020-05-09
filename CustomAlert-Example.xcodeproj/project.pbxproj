@@ -13,14 +13,16 @@
 		3D532D2C227605E0002EE51F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D532D24227605E0002EE51F /* AppDelegate.swift */; };
 		3D532D2E227605E0002EE51F /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D532D27227605E0002EE51F /* ButtonViewController.swift */; };
 		3D532D2F227605E0002EE51F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D532D29227605E0002EE51F /* Assets.xcassets */; };
-		C21BC901233E70440087096D /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21BC8FF233E70440087096D /* AlertWindow.swift */; };
-		C21BC902233E70440087096D /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21BC900233E70440087096D /* AlertPresenter.swift */; };
-		C2487D3923327C9E00683F9B /* IconAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2487D3823327C9E00683F9B /* IconAlertViewModel.swift */; };
-		C2487D3B23327D2400683F9B /* IconAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2487D3A23327D2400683F9B /* IconAlertViewController.swift */; };
+		3DA5614F2466F41C0004126F /* InformationalAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561422466F41B0004126F /* InformationalAlertViewController.swift */; };
+		3DA561502466F41C0004126F /* ErrorAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561432466F41B0004126F /* ErrorAlertViewController.swift */; };
+		3DA561512466F41C0004126F /* AlertsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561452466F41C0004126F /* AlertsViewControllerFactory.swift */; };
+		3DA561522466F41C0004126F /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561472466F41C0004126F /* AlertWindow.swift */; };
+		3DA561532466F41C0004126F /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561482466F41C0004126F /* AlertPresenter.swift */; };
+		3DA561542466F41C0004126F /* WarningAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5614A2466F41C0004126F /* WarningAlertViewModel.swift */; };
+		3DA561552466F41C0004126F /* AlertTextButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5614B2466F41C0004126F /* AlertTextButtonViewModel.swift */; };
+		3DA561562466F41C0004126F /* InformationalAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5614C2466F41C0004126F /* InformationalAlertViewModel.swift */; };
+		3DA561572466F41C0004126F /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5614E2466F41C0004126F /* Alerts.storyboard */; };
 		C2487D3E2332853C00683F9B /* UIViewController+Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2487D3D2332853C00683F9B /* UIViewController+Child.swift */; };
-		C2885E50232BD2AF00EC8A3C /* TextAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2885E4F232BD2AF00EC8A3C /* TextAlertViewModel.swift */; };
-		C2885E53232BD36900EC8A3C /* TextAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2885E52232BD36900EC8A3C /* TextAlertViewController.swift */; };
-		C2885E55232BD37900EC8A3C /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2885E54232BD37900EC8A3C /* Alerts.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,14 +46,16 @@
 		3D532D25227605E0002EE51F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D532D27227605E0002EE51F /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		3D532D29227605E0002EE51F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C21BC8FF233E70440087096D /* AlertWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
-		C21BC900233E70440087096D /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
-		C2487D3823327C9E00683F9B /* IconAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAlertViewModel.swift; sourceTree = "<group>"; };
-		C2487D3A23327D2400683F9B /* IconAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAlertViewController.swift; sourceTree = "<group>"; };
+		3DA561422466F41B0004126F /* InformationalAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationalAlertViewController.swift; sourceTree = "<group>"; };
+		3DA561432466F41B0004126F /* ErrorAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewController.swift; sourceTree = "<group>"; };
+		3DA561452466F41C0004126F /* AlertsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewControllerFactory.swift; sourceTree = "<group>"; };
+		3DA561472466F41C0004126F /* AlertWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
+		3DA561482466F41C0004126F /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		3DA5614A2466F41C0004126F /* WarningAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningAlertViewModel.swift; sourceTree = "<group>"; };
+		3DA5614B2466F41C0004126F /* AlertTextButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTextButtonViewModel.swift; sourceTree = "<group>"; };
+		3DA5614C2466F41C0004126F /* InformationalAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationalAlertViewModel.swift; sourceTree = "<group>"; };
+		3DA5614E2466F41C0004126F /* Alerts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
 		C2487D3D2332853C00683F9B /* UIViewController+Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Child.swift"; sourceTree = "<group>"; };
-		C2885E4F232BD2AF00EC8A3C /* TextAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAlertViewModel.swift; sourceTree = "<group>"; };
-		C2885E52232BD36900EC8A3C /* TextAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAlertViewController.swift; sourceTree = "<group>"; };
-		C2885E54232BD37900EC8A3C /* Alerts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D5260DE2466F2620039684C /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				3DA561442466F41C0004126F /* Factories */,
+				3DA561462466F41C0004126F /* Presenters */,
+				3DA5614D2466F41C0004126F /* Storyboards */,
+				3DA561412466F41B0004126F /* ViewControllers */,
+				3DA561492466F41C0004126F /* ViewModels */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		3D532CF2227604E2002EE51F = {
 			isa = PBXGroup;
 			children = (
@@ -93,9 +109,7 @@
 		3D532CFD227604E2002EE51F /* CustomAlert-Example */ = {
 			isa = PBXGroup;
 			children = (
-				C21BC8FE233E70440087096D /* AlertPresenter */,
-				C2885E51232BD36900EC8A3C /* AlertViewControllers */,
-				C2885E4E232BD27200EC8A3C /* AlertViewModels */,
+				3D5260DE2466F2620039684C /* Alerts */,
 				3D532D23227605E0002EE51F /* Application */,
 				C2487D3C2332852400683F9B /* Extensions */,
 				3D532D28227605E0002EE51F /* Resources */,
@@ -117,7 +131,6 @@
 		3D532D1E227605E0002EE51F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				C2885E54232BD37900EC8A3C /* Alerts.storyboard */,
 				3D532D1F227605E0002EE51F /* LaunchScreen.storyboard */,
 				3D532D21227605E0002EE51F /* Main.storyboard */,
 			);
@@ -149,13 +162,48 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		C21BC8FE233E70440087096D /* AlertPresenter */ = {
+		3DA561412466F41B0004126F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C21BC8FF233E70440087096D /* AlertWindow.swift */,
-				C21BC900233E70440087096D /* AlertPresenter.swift */,
+				3DA561422466F41B0004126F /* InformationalAlertViewController.swift */,
+				3DA561432466F41B0004126F /* ErrorAlertViewController.swift */,
 			);
-			path = AlertPresenter;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3DA561442466F41C0004126F /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				3DA561452466F41C0004126F /* AlertsViewControllerFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		3DA561462466F41C0004126F /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				3DA561472466F41C0004126F /* AlertWindow.swift */,
+				3DA561482466F41C0004126F /* AlertPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		3DA561492466F41C0004126F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3DA5614A2466F41C0004126F /* WarningAlertViewModel.swift */,
+				3DA5614B2466F41C0004126F /* AlertTextButtonViewModel.swift */,
+				3DA5614C2466F41C0004126F /* InformationalAlertViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3DA5614D2466F41C0004126F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3DA5614E2466F41C0004126F /* Alerts.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		C2487D3C2332852400683F9B /* Extensions */ = {
@@ -164,24 +212,6 @@
 				C2487D3D2332853C00683F9B /* UIViewController+Child.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		C2885E4E232BD27200EC8A3C /* AlertViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				C2885E4F232BD2AF00EC8A3C /* TextAlertViewModel.swift */,
-				C2487D3823327C9E00683F9B /* IconAlertViewModel.swift */,
-			);
-			path = AlertViewModels;
-			sourceTree = "<group>";
-		};
-		C2885E51232BD36900EC8A3C /* AlertViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				C2885E52232BD36900EC8A3C /* TextAlertViewController.swift */,
-				C2487D3A23327D2400683F9B /* IconAlertViewController.swift */,
-			);
-			path = AlertViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +300,7 @@
 				3D532D2A227605E0002EE51F /* LaunchScreen.storyboard in Resources */,
 				3D532D2B227605E0002EE51F /* Main.storyboard in Resources */,
 				3D532D2F227605E0002EE51F /* Assets.xcassets in Resources */,
-				C2885E55232BD37900EC8A3C /* Alerts.storyboard in Resources */,
+				3DA561572466F41C0004126F /* Alerts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,15 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DA561512466F41C0004126F /* AlertsViewControllerFactory.swift in Sources */,
 				3D532D2E227605E0002EE51F /* ButtonViewController.swift in Sources */,
-				C21BC902233E70440087096D /* AlertPresenter.swift in Sources */,
+				3DA561562466F41C0004126F /* InformationalAlertViewModel.swift in Sources */,
 				C2487D3E2332853C00683F9B /* UIViewController+Child.swift in Sources */,
 				3D532D2C227605E0002EE51F /* AppDelegate.swift in Sources */,
-				C2487D3B23327D2400683F9B /* IconAlertViewController.swift in Sources */,
-				C21BC901233E70440087096D /* AlertWindow.swift in Sources */,
-				C2487D3923327C9E00683F9B /* IconAlertViewModel.swift in Sources */,
-				C2885E50232BD2AF00EC8A3C /* TextAlertViewModel.swift in Sources */,
-				C2885E53232BD36900EC8A3C /* TextAlertViewController.swift in Sources */,
+				3DA561522466F41C0004126F /* AlertWindow.swift in Sources */,
+				3DA561502466F41C0004126F /* ErrorAlertViewController.swift in Sources */,
+				3DA5614F2466F41C0004126F /* InformationalAlertViewController.swift in Sources */,
+				3DA561552466F41C0004126F /* AlertTextButtonViewModel.swift in Sources */,
+				3DA561532466F41C0004126F /* AlertPresenter.swift in Sources */,
+				3DA561542466F41C0004126F /* WarningAlertViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

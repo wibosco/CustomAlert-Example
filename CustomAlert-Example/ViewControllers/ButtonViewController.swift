@@ -29,10 +29,10 @@ class ButtonViewController: UIViewController {
     @IBAction func showButtonPressed(_ sender: Any) {
         if showInformationalAlert {
             let alertViewModel = createTextAlertViewModel()
-            AlertPresenter.shared.presentAlert(withAlertViewModel: alertViewModel)
+            AlertPresenter.shared.presentAlert(.informational(alertViewModel: alertViewModel))
         } else {
             let alertViewModel = createIconAlertViewModel()
-            AlertPresenter.shared.presentAlert(withAlertViewModel: alertViewModel)
+            AlertPresenter.shared.presentAlert(.error(alertViewModel: alertViewModel))
         }
         
         showInformationalAlert.toggle()
@@ -40,21 +40,20 @@ class ButtonViewController: UIViewController {
     
     // MARK: - Alerts
     
-    private func createTextAlertViewModel() -> TextAlertViewModel  {
-        let dismissButton = TextAlertButton(title: "Dismiss") {
+    private func createTextAlertViewModel() -> InformationalAlertViewModel  {
+        let dismissButton = AlertTextButtonViewModel(title: "Dismiss") {
             os_log(.info, "Dismiss button was pressed")
         }
-        let alertViewModel = TextAlertViewModel(title: "Text alert title", button: dismissButton)
+        let alertViewModel = InformationalAlertViewModel(title: "Text alert title", button: dismissButton)
         
         return alertViewModel
     }
     
-    private func createIconAlertViewModel() -> IconAlertViewModel  {
-        let icon = UIImage(imageLiteralResourceName: "error-circle")
-        let okButton = IconAlertButton(title: "OK") {
+    private func createIconAlertViewModel() -> ErrorAlertViewModel  {
+        let okButton = AlertTextButtonViewModel(title: "OK") {
             os_log(.info, "OK button was pressed")
         }
-        let alertViewModel = IconAlertViewModel(title: "Icon alert title", message: "Message for icon alert", icon: icon, button: okButton)
+        let alertViewModel = ErrorAlertViewModel(title: "Error alert title", message: "Message for error alert", button: okButton)
         
         return alertViewModel
     }

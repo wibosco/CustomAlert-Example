@@ -1,5 +1,5 @@
 //
-//  IconAlertViewController.swift
+//  ErrorAlertViewController.swift
 //  CustomAlert-Example
 //
 //  Created by William Boles on 26/10/2019.
@@ -8,21 +8,21 @@
 
 import UIKit
 
-class IconAlertViewController: UIViewController {
+class ErrorAlertViewController: UIViewController {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var button: UIButton!
     
-    private var viewModel: IconAlertViewModel?
+    private var viewModel: ErrorAlertViewModel?
     
     // MARK: - Configure
     
-    func configure(withViewModel viewModel: IconAlertViewModel) {
+    func configure(withViewModel viewModel: ErrorAlertViewModel) {
         self.viewModel = viewModel
         
         titleLabel.text = viewModel.title
-        headerImageView.image = viewModel.icon
+        messageLabel.text = viewModel.message
         button.setTitle(viewModel.button.title, for: .normal)
     }
     

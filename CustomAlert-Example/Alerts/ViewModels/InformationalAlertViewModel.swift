@@ -8,12 +8,7 @@
 
 import Foundation
 
-struct TextAlertViewModel {
+struct InformationalAlertViewModel {
     let title: String
-    let button: TextAlertButton
-}
-
-struct TextAlertButton {
-    let title: String
-    let action: (() -> ())?
+    let button: AlertTextButtonViewModel
 }

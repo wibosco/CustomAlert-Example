@@ -1,5 +1,5 @@
 //
-//  TextAlertViewController.swift
+//  InformationalAlertViewController.swift
 //  CustomAlert-Example
 //
 //  Created by William Boles on 26/10/2019.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class TextAlertViewController: UIViewController {
+class InformationalAlertViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var button: UIButton!
     
-    private var viewModel: TextAlertViewModel?
+    private var viewModel: InformationalAlertViewModel?
     
     // MARK: - Configure
     
-    func configure(withViewModel viewModel: TextAlertViewModel) {
+    func configure(withViewModel viewModel: InformationalAlertViewModel) {
         self.viewModel = viewModel
         
         titleLabel.text = viewModel.title

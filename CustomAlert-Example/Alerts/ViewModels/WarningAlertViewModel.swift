@@ -1,5 +1,5 @@
 //
-//  IconAlertViewModel.swift
+//  ErrorAlertViewModel.swift
 //  CustomAlert-Example
 //
 //  Created by William Boles on 26/10/2019.
@@ -9,14 +9,8 @@
 import Foundation
 import UIKit
 
-struct IconAlertViewModel {
+struct ErrorAlertViewModel {
     let title: String
     let message: String
-    let icon: UIImage
-    let button: IconAlertButton
-}
-
-struct IconAlertButton {
-    let title: String
-    let action: (() -> ())?
+    let button: AlertTextButtonViewModel
 }
