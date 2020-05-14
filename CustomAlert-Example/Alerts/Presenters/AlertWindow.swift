@@ -9,15 +9,10 @@
 import Foundation
 import UIKit
 
-protocol AlertWindowDelegate: class {
-    func alertWindow(_ alertWindow: AlertWindow, didDismissAlert viewController: UIViewController)
-}
-
-class AlertWindow: UIWindow, HoldingDelegate {
+class AlertWindow: UIWindow {
     var alertViewController: UIViewController {
         return holdingViewController.containerViewController.childViewController
     }
-    weak var delegate: AlertWindowDelegate?
     
     private let holdingViewController: HoldingViewController
     
@@ -27,7 +22,6 @@ class AlertWindow: UIWindow, HoldingDelegate {
         holdingViewController = HoldingViewController(withAlertViewController: alertViewController)
         super.init(frame: UIScreen.main.bounds)
         
-        holdingViewController.delegate = self
         rootViewController = holdingViewController
         
         windowLevel = .alert
@@ -38,21 +32,17 @@ class AlertWindow: UIWindow, HoldingDelegate {
         fatalError("Unavailable")
     }
     
-    // MARK: - HoldingDelegate
-    
-    fileprivate func viewController(_ viewController: HoldingViewController, didDismissAlert alertViewController: UIViewController) {
-        resignKeyAndHide()
-        delegate?.alertWindow(self, didDismissAlert: alertViewController)
-    }
-    
     // MARK: - Present
     
     func present() {
         makeKeyAndVisible()
     }
     
-    func dismiss() {
-        holdingViewController.dismissAlert()
+    func dismiss(completion: @escaping (() -> ())) {
+        holdingViewController.dismissAlert { [weak self] in
+            self?.resignKeyAndHide()
+            completion()
+        }
     }
     
     // MARK: - Resign
@@ -63,14 +53,8 @@ class AlertWindow: UIWindow, HoldingDelegate {
     }
 }
 
-fileprivate protocol HoldingDelegate: class {
-    func viewController(_ viewController: HoldingViewController, didDismissAlert alertViewController: UIViewController)
-}
-
 fileprivate class HoldingViewController: UIViewController, UIViewControllerTransitioningDelegate {
     let containerViewController: AlertContainerViewController
-    
-    weak var delegate: HoldingDelegate?
     
     // MARK: - Init
     
@@ -97,9 +81,9 @@ fileprivate class HoldingViewController: UIViewController, UIViewControllerTrans
     
     // MARK: - Dismiss
     
-    func dismissAlert() {
+    func dismissAlert(completion: @escaping (() -> ())) {
         containerViewController.dismiss(animated: true, completion: {
-            self.delegate?.viewController(self, didDismissAlert: self.containerViewController.childViewController)
+            completion()
         })
     }
     

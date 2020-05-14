@@ -9,8 +9,13 @@
 import Foundation
 import UIKit
 
-class AlertPresenter: AlertWindowDelegate {
-    private var alertWindows = [AlertWindow]()
+enum AlertType {
+    case informational(alertViewModel: InformationalAlertViewModel)
+    case error(alertViewModel: ErrorAlertViewModel)
+}
+
+class AlertPresenter {
+    private var alertWindows = Set<AlertWindow>()
     private let viewControllerFactory: AlertViewControllerFactory
     
     static let shared = AlertPresenter()
@@ -25,34 +30,22 @@ class AlertPresenter: AlertWindowDelegate {
     
     func presentAlert(_ alertType: AlertType) {
         let viewController = viewControllerFactory.alertViewController(for: alertType, with: handleAlertDismissalCompletion)
-
         let alertWindow = AlertWindow(withAlertViewController: viewController)
-        alertWindow.delegate = self
         
         alertWindow.present()
         
-        alertWindows.append(alertWindow)
-    }
-    
-    // MARK: - AlertWindowDelegate
-    
-    func alertWindow(_ alertWindow: AlertWindow, didDismissAlert viewController: UIViewController) {
-        guard let index = alertWindows.firstIndex(of: alertWindow) else {
-            return
-        }
-        
-        alertWindows.remove(at: index)
+        alertWindows.insert(alertWindow)
     }
     
     // MARK: - Dismissal
     
     private func handleAlertDismissalCompletion(_ alertViewController: UIViewController) {
-        guard let index = alertWindows.firstIndex(where: { $0.alertViewController == alertViewController } )  else {
+        guard let alertWindow = alertWindows.first(where: { $0.alertViewController == alertViewController } )  else {
             return
         }
-        let alertWindow = alertWindows[index]
-        alertWindow.dismiss()
         
-        alertWindows.remove(at: index)
+        alertWindow.dismiss { [weak self] in
+            self?.alertWindows.remove(alertWindow)
+        }
     }
 }

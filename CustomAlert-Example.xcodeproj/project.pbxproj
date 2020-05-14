@@ -18,7 +18,7 @@
 		3DA561512466F41C0004126F /* AlertsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561452466F41C0004126F /* AlertsViewControllerFactory.swift */; };
 		3DA561522466F41C0004126F /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561472466F41C0004126F /* AlertWindow.swift */; };
 		3DA561532466F41C0004126F /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561482466F41C0004126F /* AlertPresenter.swift */; };
-		3DA561542466F41C0004126F /* WarningAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5614A2466F41C0004126F /* WarningAlertViewModel.swift */; };
+		3DA561542466F41C0004126F /* ErrorAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5614A2466F41C0004126F /* ErrorAlertViewModel.swift */; };
 		3DA561552466F41C0004126F /* AlertTextButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5614B2466F41C0004126F /* AlertTextButtonViewModel.swift */; };
 		3DA561562466F41C0004126F /* InformationalAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA5614C2466F41C0004126F /* InformationalAlertViewModel.swift */; };
 		3DA561572466F41C0004126F /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5614E2466F41C0004126F /* Alerts.storyboard */; };
@@ -51,7 +51,7 @@
 		3DA561452466F41C0004126F /* AlertsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewControllerFactory.swift; sourceTree = "<group>"; };
 		3DA561472466F41C0004126F /* AlertWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
 		3DA561482466F41C0004126F /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
-		3DA5614A2466F41C0004126F /* WarningAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningAlertViewModel.swift; sourceTree = "<group>"; };
+		3DA5614A2466F41C0004126F /* ErrorAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewModel.swift; sourceTree = "<group>"; };
 		3DA5614B2466F41C0004126F /* AlertTextButtonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertTextButtonViewModel.swift; sourceTree = "<group>"; };
 		3DA5614C2466F41C0004126F /* InformationalAlertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationalAlertViewModel.swift; sourceTree = "<group>"; };
 		3DA5614E2466F41C0004126F /* Alerts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 		3DA561492466F41C0004126F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				3DA5614A2466F41C0004126F /* WarningAlertViewModel.swift */,
+				3DA5614A2466F41C0004126F /* ErrorAlertViewModel.swift */,
 				3DA5614B2466F41C0004126F /* AlertTextButtonViewModel.swift */,
 				3DA5614C2466F41C0004126F /* InformationalAlertViewModel.swift */,
 			);
@@ -328,7 +328,7 @@
 				3DA5614F2466F41C0004126F /* InformationalAlertViewController.swift in Sources */,
 				3DA561552466F41C0004126F /* AlertTextButtonViewModel.swift in Sources */,
 				3DA561532466F41C0004126F /* AlertPresenter.swift in Sources */,
-				3DA561542466F41C0004126F /* WarningAlertViewModel.swift in Sources */,
+				3DA561542466F41C0004126F /* ErrorAlertViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

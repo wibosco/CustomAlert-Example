@@ -8,16 +8,9 @@
 
 import UIKit
 
-enum AlertType {
-    case informational(alertViewModel: InformationalAlertViewModel)
-    case error(alertViewModel: ErrorAlertViewModel)
-}
-
 typealias AlertDismissalCompletion = ((_ alertViewController: UIViewController) -> ())
 
 class AlertViewControllerFactory {
-    
-    // MARK: - WindowPresentationViewModel
     
     func alertViewController(for type: AlertType, with dismissalCompletion: @escaping AlertDismissalCompletion) -> UIViewController {
         let viewController: UIViewController
