@@ -28,11 +28,11 @@ class ButtonViewController: UIViewController {
     
     @IBAction func showButtonPressed(_ sender: Any) {
         if showInformationalAlert {
-            let alertViewModel = createTextAlertViewModel()
-            AlertPresenter.shared.presentAlert(.informational(alertViewModel: alertViewModel))
+            let alertViewController = createInformationalViewController()
+            AlertPresenter.shared.presentAlert(alertViewController)
         } else {
-            let alertViewModel = createIconAlertViewModel()
-            AlertPresenter.shared.presentAlert(.error(alertViewModel: alertViewModel))
+            let alertViewController = createErrorViewController()
+              AlertPresenter.shared.presentAlert(alertViewController)
         }
         
         showInformationalAlert.toggle()
@@ -40,21 +40,29 @@ class ButtonViewController: UIViewController {
     
     // MARK: - Alerts
     
-    private func createTextAlertViewModel() -> InformationalAlertViewModel  {
+    private func createInformationalViewController() -> InformationalAlertViewController  {
+        let alertViewController = InformationalAlertViewController.createAlertViewController()
+        
         let dismissButton = AlertTextButtonViewModel(title: "Dismiss") {
-            os_log(.info, "Dismiss button was pressed")
+            AlertPresenter.shared.dismissAlert(alertViewController)
         }
         let alertViewModel = InformationalAlertViewModel(title: "Text alert title", button: dismissButton)
         
-        return alertViewModel
+        alertViewController.configure(withViewModel: alertViewModel)
+        
+        return alertViewController
     }
     
-    private func createIconAlertViewModel() -> ErrorAlertViewModel  {
+    private func createErrorViewController() -> ErrorAlertViewController  {
+        let alertViewController = ErrorAlertViewController.createAlertViewController()
+        
         let okButton = AlertTextButtonViewModel(title: "OK") {
-            os_log(.info, "OK button was pressed")
+            AlertPresenter.shared.dismissAlert(alertViewController)
         }
         let alertViewModel = ErrorAlertViewModel(title: "Error alert title", message: "Message for error alert", button: okButton)
         
-        return alertViewModel
+        alertViewController.configure(withViewModel: alertViewModel)
+        
+        return alertViewController
     }
 }
