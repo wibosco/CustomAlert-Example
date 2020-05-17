@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InformationalAlertViewController: UIViewController {
+class InformationalAlertViewController: AlertViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var button: UIButton!
     

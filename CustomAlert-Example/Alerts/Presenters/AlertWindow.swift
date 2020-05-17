@@ -6,11 +6,10 @@
 //  Copyright © 2019 William Boles. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class AlertWindow: UIWindow {
-    var alertViewController: UIViewController {
+    var alertViewController: AlertViewController {
         return holdingViewController.containerViewController.childViewController
     }
     
@@ -18,7 +17,7 @@ class AlertWindow: UIWindow {
     
     // MARK: - Init
     
-    init(withAlertViewController alertViewController: UIViewController) {
+    init(withAlertViewController alertViewController: AlertViewController) {
         holdingViewController = HoldingViewController(withAlertViewController: alertViewController)
         super.init(frame: UIScreen.main.bounds)
         
@@ -37,6 +36,8 @@ class AlertWindow: UIWindow {
     func present() {
         makeKeyAndVisible()
     }
+    
+    // MARK: - Dismiss
     
     func dismiss(completion: @escaping (() -> ())) {
         holdingViewController.dismissAlert { [weak self] in
@@ -58,12 +59,11 @@ fileprivate class HoldingViewController: UIViewController, UIViewControllerTrans
     
     // MARK: - Init
     
-    init(withAlertViewController alertViewController: UIViewController) {
+    init(withAlertViewController alertViewController: AlertViewController) {
         containerViewController = AlertContainerViewController(withChildViewController: alertViewController)
         super.init(nibName: nil, bundle: nil)
         
-        containerViewController.modalPresentationStyle = .overCurrentContext
-        containerViewController.modalTransitionStyle = .crossDissolve
+        containerViewController.modalPresentationStyle = .custom
         containerViewController.transitioningDelegate = self
     }
     
@@ -98,12 +98,12 @@ fileprivate class HoldingViewController: UIViewController, UIViewControllerTrans
     }
 }
 
-fileprivate class AlertContainerViewController: UIViewController, UIViewControllerTransitioningDelegate {
-    let childViewController: UIViewController
+fileprivate class AlertContainerViewController: UIViewController {
+    let childViewController: AlertViewController
     
     // MARK: - Init
     
-    init(withChildViewController childViewController: UIViewController) {
+    init(withChildViewController childViewController: AlertViewController) {
         self.childViewController = childViewController
         super.init(nibName: nil, bundle: nil)
     }
@@ -123,9 +123,11 @@ fileprivate class AlertContainerViewController: UIViewController, UIViewControll
         
         view.addSubview(backgroundView)
         
-        childViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        add(childViewController)
+        addChild(childViewController)
+        view.addSubview(childViewController.view)
+        childViewController.didMove(toParent: self)
         
+        childViewController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             childViewController.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             childViewController.view.centerYAnchor.constraint(equalTo: view.centerYAnchor),

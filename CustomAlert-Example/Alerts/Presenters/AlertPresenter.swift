@@ -7,42 +7,32 @@
 //
 
 import Foundation
-import UIKit
-
-enum AlertType {
-    case informational(alertViewModel: InformationalAlertViewModel)
-    case error(alertViewModel: ErrorAlertViewModel)
-}
+import os
 
 class AlertPresenter {
     private var alertWindows = Set<AlertWindow>()
-    private let viewControllerFactory: AlertViewControllerFactory
     
     static let shared = AlertPresenter()
     
-    // MARK - Init
-    
-    init(viewControllerFactory: AlertViewControllerFactory = AlertViewControllerFactory()) {
-        self.viewControllerFactory = viewControllerFactory
-    }
-    
     // MARK: - Present
     
-    func presentAlert(_ alertType: AlertType) {
-        let viewController = viewControllerFactory.alertViewController(for: alertType, with: handleAlertDismissalCompletion)
-        let alertWindow = AlertWindow(withAlertViewController: viewController)
+    func presentAlert(_ alertViewController: AlertViewController) {
+        os_log(.info, "Alert being presented")
         
+        let alertWindow = AlertWindow(withAlertViewController: alertViewController)
         alertWindow.present()
         
         alertWindows.insert(alertWindow)
     }
     
-    // MARK: - Dismissal
+    // MARK: - Dismiss
     
-    private func handleAlertDismissalCompletion(_ alertViewController: UIViewController) {
+    func dismissAlert(_ alertViewController: AlertViewController) {
         guard let alertWindow = alertWindows.first(where: { $0.alertViewController == alertViewController } )  else {
             return
         }
+        
+        os_log(.info, "Alert being dismissed")
         
         alertWindow.dismiss { [weak self] in
             self?.alertWindows.remove(alertWindow)
