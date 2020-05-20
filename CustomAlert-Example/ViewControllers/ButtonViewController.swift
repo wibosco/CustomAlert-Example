@@ -41,7 +41,8 @@ class ButtonViewController: UIViewController {
     // MARK: - Alerts
     
     private func createInformationalViewController() -> InformationalAlertViewController  {
-        let alertViewController = InformationalAlertViewController.createAlertViewController()
+        let alertStoryboard = UIStoryboard.alertStoryboard()
+        let alertViewController = InformationalAlertViewController.instantiateViewController(fromStoryboard: alertStoryboard)
         
         let dismissButton = AlertTextButtonViewModel(title: "Dismiss") {
             AlertPresenter.shared.dismissAlert(alertViewController)
@@ -54,7 +55,8 @@ class ButtonViewController: UIViewController {
     }
     
     private func createErrorViewController() -> ErrorAlertViewController  {
-        let alertViewController = ErrorAlertViewController.createAlertViewController()
+        let alertStoryboard = UIStoryboard.alertStoryboard()
+        let alertViewController = ErrorAlertViewController.instantiateViewController(fromStoryboard: alertStoryboard)
         
         let okButton = AlertTextButtonViewModel(title: "OK") {
             AlertPresenter.shared.dismissAlert(alertViewController)

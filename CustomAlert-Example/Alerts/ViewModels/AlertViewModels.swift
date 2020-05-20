@@ -10,7 +10,7 @@ import UIKit
 
 struct AlertTextButtonViewModel {
     let title: String
-    let action: (() -> ())?
+    let action: (() -> Void)?
 }
 
 struct InformationalAlertViewModel {

@@ -9,7 +9,7 @@
 import UIKit
 
 class AlertWindow: UIWindow {
-    var alertViewController: AlertViewController {
+    var viewController: UIViewController {
         return holdingViewController.containerViewController.childViewController
     }
     
@@ -17,8 +17,8 @@ class AlertWindow: UIWindow {
     
     // MARK: - Init
     
-    init(withAlertViewController alertViewController: AlertViewController) {
-        holdingViewController = HoldingViewController(withAlertViewController: alertViewController)
+    init(withViewController viewController: UIViewController) {
+        holdingViewController = HoldingViewController(withViewController: viewController)
         super.init(frame: UIScreen.main.bounds)
         
         rootViewController = holdingViewController
@@ -39,7 +39,7 @@ class AlertWindow: UIWindow {
     
     // MARK: - Dismiss
     
-    func dismiss(completion: @escaping (() -> ())) {
+    func dismiss(completion: @escaping (() -> Void)) {
         holdingViewController.dismissAlert { [weak self] in
             self?.resignKeyAndHide()
             completion()
@@ -59,8 +59,8 @@ fileprivate class HoldingViewController: UIViewController, UIViewControllerTrans
     
     // MARK: - Init
     
-    init(withAlertViewController alertViewController: AlertViewController) {
-        containerViewController = AlertContainerViewController(withChildViewController: alertViewController)
+    init(withViewController viewController: UIViewController) {
+        containerViewController = AlertContainerViewController(withChildViewController: viewController)
         super.init(nibName: nil, bundle: nil)
         
         containerViewController.modalPresentationStyle = .custom
@@ -81,7 +81,7 @@ fileprivate class HoldingViewController: UIViewController, UIViewControllerTrans
     
     // MARK: - Dismiss
     
-    func dismissAlert(completion: @escaping (() -> ())) {
+    func dismissAlert(completion: @escaping (() -> Void)) {
         containerViewController.dismiss(animated: true, completion: {
             completion()
         })
@@ -99,11 +99,11 @@ fileprivate class HoldingViewController: UIViewController, UIViewControllerTrans
 }
 
 fileprivate class AlertContainerViewController: UIViewController {
-    let childViewController: AlertViewController
+    let childViewController: UIViewController
     
     // MARK: - Init
     
-    init(withChildViewController childViewController: AlertViewController) {
+    init(withChildViewController childViewController: UIViewController) {
         self.childViewController = childViewController
         super.init(nibName: nil, bundle: nil)
     }

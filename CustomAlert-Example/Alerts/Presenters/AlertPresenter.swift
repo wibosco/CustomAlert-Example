@@ -6,7 +6,7 @@
 //  Copyright © 2019 William Boles. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import os
 
 class AlertPresenter {
@@ -16,10 +16,10 @@ class AlertPresenter {
     
     // MARK: - Present
     
-    func presentAlert(_ alertViewController: AlertViewController) {
+    func presentAlert(_ viewController: UIViewController) {
         os_log(.info, "Alert being presented")
         
-        let alertWindow = AlertWindow(withAlertViewController: alertViewController)
+        let alertWindow = AlertWindow(withViewController: viewController)
         alertWindow.present()
         
         alertWindows.insert(alertWindow)
@@ -27,8 +27,8 @@ class AlertPresenter {
     
     // MARK: - Dismiss
     
-    func dismissAlert(_ alertViewController: AlertViewController) {
-        guard let alertWindow = alertWindows.first(where: { $0.alertViewController == alertViewController } )  else {
+    func dismissAlert(_ viewController: UIViewController) {
+        guard let alertWindow = alertWindows.first(where: { $0.viewController == viewController } )  else {
             return
         }
         

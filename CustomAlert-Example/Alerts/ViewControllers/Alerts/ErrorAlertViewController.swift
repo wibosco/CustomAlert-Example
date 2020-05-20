@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ErrorAlertViewController: AlertViewController {
+class ErrorAlertViewController: UIViewController {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!

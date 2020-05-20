@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3655C5247537B1003E3900 /* UIStoryboard+Boards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3655C4247537B1003E3900 /* UIStoryboard+Boards.swift */; };
+		3D3655C7247538E2003E3900 /* UIViewController+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3655C6247538E2003E3900 /* UIViewController+Instantiate.swift */; };
 		3D532D14227604E3002EE51F /* CustomAlert_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D532D13227604E3002EE51F /* CustomAlert_ExampleTests.swift */; };
 		3D532D2A227605E0002EE51F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D532D1F227605E0002EE51F /* LaunchScreen.storyboard */; };
 		3D532D2B227605E0002EE51F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D532D21227605E0002EE51F /* Main.storyboard */; };
@@ -16,7 +18,6 @@
 		3DA561522466F41C0004126F /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561472466F41C0004126F /* AlertWindow.swift */; };
 		3DA561532466F41C0004126F /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA561482466F41C0004126F /* AlertPresenter.swift */; };
 		3DA561572466F41C0004126F /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA5614E2466F41C0004126F /* Alerts.storyboard */; };
-		3DB082BD246ED5A800B2ACC4 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB082B9246ED5A800B2ACC4 /* AlertViewController.swift */; };
 		3DB082BE246ED5A800B2ACC4 /* InformationalAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB082BB246ED5A800B2ACC4 /* InformationalAlertViewController.swift */; };
 		3DB082BF246ED5A800B2ACC4 /* ErrorAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB082BC246ED5A800B2ACC4 /* ErrorAlertViewController.swift */; };
 		3DB082C1246ED5E200B2ACC4 /* AlertViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB082C0246ED5E200B2ACC4 /* AlertViewModels.swift */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D3655C4247537B1003E3900 /* UIStoryboard+Boards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Boards.swift"; sourceTree = "<group>"; };
+		3D3655C6247538E2003E3900 /* UIViewController+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiate.swift"; sourceTree = "<group>"; };
 		3D532CFB227604E2002EE51F /* CustomAlert-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CustomAlert-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D532D0F227604E3002EE51F /* CustomAlert-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CustomAlert-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D532D13227604E3002EE51F /* CustomAlert_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert_ExampleTests.swift; sourceTree = "<group>"; };
@@ -46,7 +49,6 @@
 		3DA561472466F41C0004126F /* AlertWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
 		3DA561482466F41C0004126F /* AlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
 		3DA5614E2466F41C0004126F /* Alerts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
-		3DB082B9246ED5A800B2ACC4 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		3DB082BB246ED5A800B2ACC4 /* InformationalAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationalAlertViewController.swift; sourceTree = "<group>"; };
 		3DB082BC246ED5A800B2ACC4 /* ErrorAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewController.swift; sourceTree = "<group>"; };
 		3DB082C0246ED5E200B2ACC4 /* AlertViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModels.swift; sourceTree = "<group>"; };
@@ -70,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D3655C324753793003E3900 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D3655C4247537B1003E3900 /* UIStoryboard+Boards.swift */,
+				3D3655C6247538E2003E3900 /* UIViewController+Instantiate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3D5260DE2466F2620039684C /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +115,7 @@
 			children = (
 				3D5260DE2466F2620039684C /* Alerts */,
 				3D532D23227605E0002EE51F /* Application */,
+				3D3655C324753793003E3900 /* Extensions */,
 				3D532D28227605E0002EE51F /* Resources */,
 				3D532D1E227605E0002EE51F /* Storyboards */,
 				3D532D26227605E0002EE51F /* ViewControllers */,
@@ -157,7 +169,6 @@
 		3DA561412466F41B0004126F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3DB082B8246ED5A800B2ACC4 /* Abstract */,
 				3DB082BA246ED5A800B2ACC4 /* Alerts */,
 			);
 			path = ViewControllers;
@@ -186,14 +197,6 @@
 				3DA5614E2466F41C0004126F /* Alerts.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		3DB082B8246ED5A800B2ACC4 /* Abstract */ = {
-			isa = PBXGroup;
-			children = (
-				3DB082B9246ED5A800B2ACC4 /* AlertViewController.swift */,
-			);
-			path = Abstract;
 			sourceTree = "<group>";
 		};
 		3DB082BA246ED5A800B2ACC4 /* Alerts */ = {
@@ -311,9 +314,10 @@
 			files = (
 				3D532D2E227605E0002EE51F /* ButtonViewController.swift in Sources */,
 				3DB082BE246ED5A800B2ACC4 /* InformationalAlertViewController.swift in Sources */,
+				3D3655C5247537B1003E3900 /* UIStoryboard+Boards.swift in Sources */,
+				3D3655C7247538E2003E3900 /* UIViewController+Instantiate.swift in Sources */,
 				3DB082BF246ED5A800B2ACC4 /* ErrorAlertViewController.swift in Sources */,
 				3D532D2C227605E0002EE51F /* AppDelegate.swift in Sources */,
-				3DB082BD246ED5A800B2ACC4 /* AlertViewController.swift in Sources */,
 				3DA561522466F41C0004126F /* AlertWindow.swift in Sources */,
 				3DA561532466F41C0004126F /* AlertPresenter.swift in Sources */,
 				3DB082C1246ED5E200B2ACC4 /* AlertViewModels.swift in Sources */,
