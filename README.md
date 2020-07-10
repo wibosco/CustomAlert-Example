@@ -5,4 +5,4 @@ Status](https://travis-ci.org/wibosco/CustomAlert-Example.svg)](https://travis-c
 <a href="https://twitter.com/wibosco"><img src="https://img.shields.io/badge/twitter-@wibosco-blue.svg?style=flat" alt="Twitter: @wibosco" /></a>
 
 # CustomAlert-Example
-A Swift example project on how to build and present custom alerts.
+A Swift example project on how to build and present custom alerts as shown in this article - https://williamboles.me/finding-hope-with-custom-alerts/
